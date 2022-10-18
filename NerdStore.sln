@@ -27,11 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04942D63
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalogo.Domain.Tests", "tests\NerdStore.Catalogo.Domain.Tests\NerdStore.Catalogo.Domain.Tests.csproj", "{575A415E-D46E-47DC-9E6E-EDC982CEE65F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Data", "src\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj", "{16C6A75D-B8A2-412D-9497-BFA14C746889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalogo.Data", "src\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj", "{16C6A75D-B8A2-412D-9497-BFA14C746889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Application", "src\NerdStore.Catalogo.Application\NerdStore.Catalogo.Application.csproj", "{15A0F20E-581B-48C4-B9C4-4583D049631F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalogo.Application", "src\NerdStore.Catalogo.Application\NerdStore.Catalogo.Application.csproj", "{15A0F20E-581B-48C4-B9C4-4583D049631F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.WebApp.MVC", "src\NerdStore.WebApp.MVC\NerdStore.WebApp.MVC.csproj", "{32B574C1-43DA-40C0-81AE-F526AE3D7A95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.WebApp.MVC", "src\NerdStore.WebApp.MVC\NerdStore.WebApp.MVC.csproj", "{32B574C1-43DA-40C0-81AE-F526AE3D7A95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainObjects", "DomainObjects", "{5EE17A82-BE0E-4A85-9A77-0980F97492A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,7 @@ Global
 		{16C6A75D-B8A2-412D-9497-BFA14C746889} = {5E0CD496-4A6E-4A32-B112-26E0A02BA5E5}
 		{15A0F20E-581B-48C4-B9C4-4583D049631F} = {5E0CD496-4A6E-4A32-B112-26E0A02BA5E5}
 		{32B574C1-43DA-40C0-81AE-F526AE3D7A95} = {C65B0AF6-50E5-4CC4-B87A-F620B88F0A8F}
+		{5EE17A82-BE0E-4A85-9A77-0980F97492A4} = {E0D67B21-665A-4999-9A9D-6C63BD62D2F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {65D72384-F17B-4AFF-9FF1-9267E7BD3F9D}

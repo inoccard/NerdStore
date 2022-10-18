@@ -2,6 +2,9 @@
 
 namespace NerdStore.Catalogo.Domain
 {
+    /// <summary>
+    /// classe que representa um objeto de valor, que agrega valor ao Produto
+    /// </summary>
     public class Dimensoes
     {
         public decimal Altura { get; private set; }

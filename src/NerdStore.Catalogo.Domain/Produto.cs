@@ -17,6 +17,7 @@ namespace NerdStore.Catalogo.Domain
         public Categoria Categoria { get; private set; }
 
         protected Produto() { }
+
         public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
@@ -54,15 +55,9 @@ namespace NerdStore.Catalogo.Domain
             QuantidadeEstoque -= quantidade;
         }
 
-        public void ReporEstoque(int quantidade)
-        {
-            QuantidadeEstoque += quantidade;
-        }
+        public void ReporEstoque(int quantidade) => QuantidadeEstoque += quantidade;
 
-        public bool PossuiEstoque(int quantidade)
-        {
-            return QuantidadeEstoque >= quantidade;
-        }
+        public bool PossuiEstoque(int quantidade) => QuantidadeEstoque >= quantidade;
 
         public void Validar()
         {

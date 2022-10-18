@@ -6,11 +6,13 @@ namespace NerdStore.Core.DomainObjects
     {
         public Guid Id { get; set; }
 
-        protected Entity()
-        {
-            Id = Guid.NewGuid();
-        }
+        protected Entity() => Id = Guid.NewGuid();
 
+        /// <summary>
+        /// Verificar se dois objetos são iguais
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             var compareTo = obj as Entity;
@@ -21,6 +23,12 @@ namespace NerdStore.Core.DomainObjects
             return Id.Equals(compareTo.Id);
         }
 
+        /// <summary>
+        /// operator de comparação de igualdade
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public static bool operator ==(Entity a, Entity b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
@@ -32,19 +40,20 @@ namespace NerdStore.Core.DomainObjects
             return a.Equals(b);
         }
 
-        public static bool operator !=(Entity a, Entity b)
-        {
-            return !(a == b);
-        }
+        /// <summary>
+        /// operator de comparação de diferença
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static bool operator !=(Entity a, Entity b) => !(a == b);
 
-        public override int GetHashCode()
-        {
-            return (GetType().GetHashCode() * 907) + Id.GetHashCode();
-        }
+        /// <summary>
+        /// se o id for diferente, os dados também serão
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode() => (GetType().GetHashCode() * 907) + Id.GetHashCode();
 
-        public override string ToString()
-        {
-            return $"{GetType().Name} [Id={Id}]";
-        }
+        public override string ToString() => $"{GetType().Name} [Id={Id}]";
     }
 }
