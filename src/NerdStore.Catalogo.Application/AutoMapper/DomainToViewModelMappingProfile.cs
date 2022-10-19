@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using AutoMapper;
-using NerdStore.Catalogo.Application.ViewModels;
+using NerdStore.Catalogo.Application.Dtos;
 using NerdStore.Catalogo.Domain;
 
 namespace NerdStore.Catalogo.Application.AutoMapper

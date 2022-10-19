@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NerdStore.Catalogo.Application.Services;
-using NerdStore.Catalogo.Application.ViewModels;
+using NerdStore.Catalogo.Application.Dtos;
 
 namespace NerdStore.WebApp.MVC.Controllers.Admin
 {
