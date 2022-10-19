@@ -15,21 +15,19 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
             _produtoAppService = produtoAppService;
         }
 
-        [HttpGet]
-        [Route("admin-produtos")]
+        [HttpGet("admin-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(await _produtoAppService.ObterTodos());
         }
 
-        [Route("novo-produto")]
+        [HttpGet("novo-produto")]
         public async Task<IActionResult> NovoProduto()
         {
             return View(await PopularCategorias(new ProdutoDto()));
         }
 
-        [Route("novo-produto")]
-        [HttpPost]
+        [HttpPost("novo-produto")]
         public async Task<IActionResult> NovoProduto(ProdutoDto ProdutoDto)
         {
             if (!ModelState.IsValid) return View(await PopularCategorias(ProdutoDto));
@@ -39,15 +37,13 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        [Route("editar-produto")]
+        [HttpGet("editar-produto")]
         public async Task<IActionResult> AtualizarProduto(Guid id)
         {
             return View(await PopularCategorias(await _produtoAppService.ObterPorId(id)));
         }
 
-        [HttpPost]
-        [Route("editar-produto")]
+        [HttpPost("editar-produto")]
         public async Task<IActionResult> AtualizarProduto(Guid id, ProdutoDto ProdutoDto)
         {
             var produto = await _produtoAppService.ObterPorId(id);
@@ -61,15 +57,13 @@ namespace NerdStore.WebApp.MVC.Controllers.Admin
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        [Route("produtos-atualizar-estoque")]
+        [HttpGet("produtos-atualizar-estoque")]
         public async Task<IActionResult> AtualizarEstoque(Guid id)
         {
             return View("Estoque", await _produtoAppService.ObterPorId(id));
         }
 
-        [HttpPost]
-        [Route("produtos-atualizar-estoque")]
+        [HttpPost("produtos-atualizar-estoque")]
         public async Task<IActionResult> AtualizarEstoque(Guid id, int quantidade)
         {
             if (quantidade > 0)
