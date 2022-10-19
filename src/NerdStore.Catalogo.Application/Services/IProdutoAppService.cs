@@ -7,15 +7,15 @@ namespace NerdStore.Catalogo.Application.Services
 {
     public interface IProdutoAppService : IDisposable
     {
-        Task<IEnumerable<ProdutoViewModel>> ObterPorCategoria(int codigo);
-        Task<ProdutoViewModel> ObterPorId(Guid id);
-        Task<IEnumerable<ProdutoViewModel>> ObterTodos();
-        Task<IEnumerable<CategoriaViewModel>> ObterCategorias();
+        Task<IEnumerable<ProdutoDto>> ObterPorCategoria(int codigo);
+        Task<ProdutoDto> ObterPorId(Guid id);
+        Task<IEnumerable<ProdutoDto>> ObterTodos();
+        Task<IEnumerable<CategoriaDto>> ObterCategorias();
 
-        Task AdicionarProduto(ProdutoViewModel produtoViewModel);
-        Task AtualizarProduto(ProdutoViewModel produtoViewModel);
+        Task AdicionarProduto(ProdutoDto ProdutoDto);
+        Task AtualizarProduto(ProdutoDto ProdutoDto);
 
-        Task<ProdutoViewModel> DebitarEstoque(Guid id, int quantidade);
-        Task<ProdutoViewModel> ReporEstoque(Guid id, int quantidade);
+        Task<ProdutoDto> DebitarEstoque(Guid id, int quantidade);
+        Task<ProdutoDto> ReporEstoque(Guid id, int quantidade);
     }
 }

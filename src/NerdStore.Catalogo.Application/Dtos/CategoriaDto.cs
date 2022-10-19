@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NerdStore.Catalogo.Application.ViewModels
 {
-    public class CategoriaViewModel
+    public class CategoriaDto
     {
         [Key]
         public Guid Id { get; set; }
