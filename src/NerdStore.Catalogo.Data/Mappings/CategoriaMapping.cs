@@ -8,7 +8,6 @@ namespace NerdStore.Catalogo.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-
             builder.HasKey(c => c.Id);
 
             builder.Property(c => c.Nome)

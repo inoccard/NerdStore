@@ -9,6 +9,5 @@ namespace NerdStore.Vendas.Application.Queries.ViewModels
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal ValorTotal { get; set; }
-
     }
 }

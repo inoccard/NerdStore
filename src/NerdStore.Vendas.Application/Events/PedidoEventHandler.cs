@@ -1,9 +1,9 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
-using NerdStore.Core.Bus;
+﻿using MediatR;
+using NerdStore.Core.Comunication.Mediator;
 using NerdStore.Core.Messages.CommonMessages.IntegrationEvents;
 using NerdStore.Vendas.Application.Commands;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace NerdStore.Vendas.Application.Events
 {
@@ -15,10 +15,9 @@ namespace NerdStore.Vendas.Application.Events
         INotificationHandler<PagamentoRealizadoEvent>,
         INotificationHandler<PagamentoRecusadoEvent>
     {
+        private readonly IMediatorHandler _mediatorHandler;
 
-        private readonly IMediatrHandler _mediatorHandler;
-
-        public PedidoEventHandler(IMediatrHandler mediatorHandler)
+        public PedidoEventHandler(IMediatorHandler mediatorHandler)
         {
             _mediatorHandler = mediatorHandler;
         }

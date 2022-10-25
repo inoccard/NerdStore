@@ -3,6 +3,9 @@ using System;
 
 namespace NerdStore.Vendas.Application.Commands
 {
+    /// <summary>
+    /// Tem uma intensão única, validar o item do pedido
+    /// </summary>
     public class AdicionarItemPedidoCommand : Command
     {
         public Guid ClienteId { get; private set; }

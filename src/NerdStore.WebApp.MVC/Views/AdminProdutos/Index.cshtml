@@ -73,24 +73,23 @@
         @{
             foreach (var produto in Model.OrderBy(p => p.CategoriaId))
             {
-            <div class="col-md-3 col-sm-6">
-                <span class="thumbnail">
-                    <img width="200" height="200" src="~/Images/@produto.Imagem" />
-                    <h4>@produto.Nome</h4>
-                    <p>@produto.QuantidadeEstoque em estoque</p>
-                    <p>@produto.Descricao</p>
-                    <p class="price">@produto.Valor.ToString("C")</p>
-                    <hr class="line">
-                    <div class="row">
-                        <a asp-controller="AdminProdutos" asp-action="AtualizarProduto" asp-route-id="@produto.Id" class="btn btn-success right">Editar</a> &nbsp;
-                        <a asp-controller="AdminProdutos" asp-action="AtualizarEstoque" asp-route-id="@produto.Id" class="btn btn-info right">Estoque</a>
-                    </div>
-                </span>
-            </div>
+                <div class="col-md-3 col-sm-6">
+                    <span class="thumbnail">
+                        <img width="200" height="200" src="~/Images/@produto.Imagem" />
+                        <h4>@produto.Nome</h4>
+                        <p>@produto.QuantidadeEstoque em estoque</p>
+                        <p>@produto.Descricao</p>
+                        <p class="price">@produto.Valor.ToString("C")</p>
+                        <hr class="line">
+                        <div class="row">
+                            <a asp-controller="AdminProdutos" asp-action="AtualizarProduto" asp-route-id="@produto.Id" class="btn btn-success right">Editar</a> &nbsp;
+                            <a asp-controller="AdminProdutos" asp-action="AtualizarEstoque" asp-route-id="@produto.Id" class="btn btn-info right">Estoque</a>
+                        </div>
+                    </span>
+                </div>
             }
         }
 
         <!-- END PRODUCTS -->
     </div>
 </div>
-

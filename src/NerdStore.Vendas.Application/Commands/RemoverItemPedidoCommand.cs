@@ -1,6 +1,6 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 using NerdStore.Core.Messages;
+using System;
 
 namespace NerdStore.Vendas.Application.Commands
 {
@@ -35,6 +35,4 @@ namespace NerdStore.Vendas.Application.Commands
                 .WithMessage("Id do produto inválido");
         }
     }
-
-    
 }

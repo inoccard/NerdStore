@@ -1,9 +1,9 @@
-﻿using System;
+﻿using NerdStore.Vendas.Application.Queries.ViewModels;
+using NerdStore.Vendas.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NerdStore.Vendas.Application.Queries.ViewModels;
-using NerdStore.Vendas.Domain;
 
 namespace NerdStore.Vendas.Application.Queries
 {
