@@ -31,12 +31,9 @@ namespace NerdStore.Vendas.Application.Queries
             };
 
             if (pedido.VoucherId != null)
-            {
                 carrinho.VoucherCodigo = pedido.Voucher.Codigo;
-            }
 
             foreach (var item in pedido.PedidoItems)
-            {
                 carrinho.Items.Add(new CarrinhoItemViewModel
                 {
                     ProdutoId = item.ProdutoId,
@@ -45,7 +42,6 @@ namespace NerdStore.Vendas.Application.Queries
                     ValorUnitario = item.ValorUnitario,
                     ValorTotal = item.ValorUnitario * item.Quantidade
                 });
-            }
 
             return carrinho;
         }
@@ -54,23 +50,15 @@ namespace NerdStore.Vendas.Application.Queries
         {
             var pedidos = await _pedidoRepository.ObterListaPorClienteId(clienteId);
 
+            if (!pedidos.Any()) return null;
+
             pedidos = pedidos.Where(p => p.PedidoStatus == PedidoStatus.Pago || p.PedidoStatus == PedidoStatus.Cancelado)
                 .OrderByDescending(p => p.Codigo);
-
-            if (!pedidos.Any()) return null;
 
             var pedidosView = new List<PedidoViewModel>();
 
             foreach (var pedido in pedidos)
-            {
-                pedidosView.Add(new PedidoViewModel
-                {
-                    ValorTotal = pedido.ValorTotal,
-                    PedidoStatus = (int)pedido.PedidoStatus,
-                    Codigo = pedido.Codigo,
-                    DataCadastro = pedido.DataCadastro
-                });
-            }
+                pedidosView.Add(new PedidoViewModel { ValorTotal = pedido.ValorTotal, PedidoStatus = (int)pedido.PedidoStatus, Codigo = pedido.Codigo, DataCadastro = pedido.DataCadastro });
 
             return pedidosView;
         }
