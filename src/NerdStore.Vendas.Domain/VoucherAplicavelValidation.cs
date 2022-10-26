@@ -24,9 +24,6 @@ namespace NerdStore.Vendas.Domain
                 .WithMessage("Este voucher não está mais disponível");
         }
 
-        protected static bool DataVencimentoSuperiorAtual(DateTime dataValidade)
-        {
-            return dataValidade >= DateTime.Now;
-        }
+        protected static bool DataVencimentoSuperiorAtual(DateTime dataValidade) => dataValidade >= DateTime.Now;
     }
 }

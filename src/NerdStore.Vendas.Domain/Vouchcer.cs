@@ -21,9 +21,6 @@ namespace NerdStore.Vendas.Domain
         // EF Rel.
         public ICollection<Pedido> Pedidos { get; set; }
 
-        internal ValidationResult ValidarSeAplicavel()
-        {
-            return new VoucherAplicavelValidation().Validate(this);
-        }
+        internal ValidationResult ValidarSeAplicavel() => new VoucherAplicavelValidation().Validate(this);
     }
 }

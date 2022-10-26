@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
+using NerdStore.Vendas.Application.Commands;
 using System;
 
-namespace NerdStore.Vendas.Application.Commands
+namespace NerdStore.Vendas.Application.Validation
 {
     public class AdicionarItemPedidoValidation : AbstractValidator<AdicionarItemPedidoCommand>
     {

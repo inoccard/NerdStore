@@ -37,6 +37,11 @@ namespace NerdStore.Vendas.Domain
             _pedidoItems = new List<PedidoItem>();
         }
 
+        /// <summary>
+        /// Aplicando o conceito de agregate root, manipula a classe raiz e não a filha
+        /// </summary>
+        /// <param name="voucher"></param>
+        /// <returns></returns>
         public ValidationResult AplicarVoucher(Voucher voucher)
         {
             var validationResult = voucher.ValidarSeAplicavel();

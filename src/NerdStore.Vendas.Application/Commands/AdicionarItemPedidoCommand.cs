@@ -1,4 +1,5 @@
 ﻿using NerdStore.Core.Messages;
+using NerdStore.Vendas.Application.Validation;
 using System;
 
 namespace NerdStore.Vendas.Application.Commands
@@ -23,10 +24,6 @@ namespace NerdStore.Vendas.Application.Commands
             ValorUnitario = valorUnitario;
         }
 
-        public override bool EhValido()
-        {
-            ValidationResult = new AdicionarItemPedidoValidation().Validate(this);
-            return ValidationResult.IsValid;
-        }
+        public override bool EhValido() => new AdicionarItemPedidoValidation().Validate(this).IsValid;
     }
 }

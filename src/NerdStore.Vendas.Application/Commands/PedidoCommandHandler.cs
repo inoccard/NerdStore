@@ -152,9 +152,7 @@ namespace NerdStore.Vendas.Application.Commands
             if (!voucherAplicacaoValidation.IsValid)
             {
                 foreach (var error in voucherAplicacaoValidation.Errors)
-                {
                     await _mediatorHandler.PublicarNotificacao(new DomainNotification(error.ErrorCode, error.ErrorMessage));
-                }
 
                 return false;
             }
@@ -239,8 +237,9 @@ namespace NerdStore.Vendas.Application.Commands
         {
             if (message.EhValido()) return true;
 
-            foreach (var error in message.ValidationResult.Errors)
-                _mediatorHandler.PublicarNotificacao(new DomainNotification(message.MessageType, error.ErrorMessage));
+            if (message?.ValidationResult != null)
+                foreach (var error in message.ValidationResult.Errors)
+                    _mediatorHandler.PublicarNotificacao(new DomainNotification(message.MessageType, error.ErrorMessage));
 
             return false;
         }
