@@ -86,8 +86,7 @@ namespace NerdStore.WebApp.MVC.Controllers
             return View("Index", await _pedidoQueries.ObterCarrinhoCliente(ClienteId));
         }
 
-        [HttpPost]
-        [Route("aplicar-voucher")]
+        [HttpPost("aplicar-voucher")]
         public async Task<IActionResult> AplicarVoucher(string voucherCodigo)
         {
             var command = new AplicarVoucherPedidoCommand(ClienteId, voucherCodigo);
@@ -107,8 +106,7 @@ namespace NerdStore.WebApp.MVC.Controllers
             return View(await _pedidoQueries.ObterCarrinhoCliente(ClienteId));
         }
 
-        [HttpPost]
-        [Route("iniciar-pedido")]
+        [HttpPost("iniciar-pedido")]
         public async Task<IActionResult> IniciarPedido(CarrinhoViewModel carrinhoViewModel)
         {
             var carrinho = await _pedidoQueries.ObterCarrinhoCliente(ClienteId);

@@ -37,7 +37,17 @@ namespace NerdStore.Catalogo.Domain.Events
 
             if (result)
             {
-                await _mediatorHandler.PublicarEvento(new PedidoEstoqueConfirmadoEvent(message.PedidoId, message.ClienteId, message.Total, message.ProdutosPedido, message.NomeCartao, message.NumeroCartao, message.ExpiracaoCartao, message.CvvCartao));
+                await _mediatorHandler.PublicarEvento(
+                    new PedidoEstoqueConfirmadoEvent(
+                    message.PedidoId,
+                    message.ClienteId,
+                    message.Total,
+                    message.ProdutosPedido,
+                    message.NomeCartao,
+                    message.NumeroCartao,
+                    message.ExpiracaoCartao,
+                    message.CvvCartao
+                    ));
             }
             else
             {
