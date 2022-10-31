@@ -1,4 +1,5 @@
 ﻿using NerdStore.Core.Messages;
+using NerdStore.Core.Messages.CommonMessages.DomainEvents;
 using NerdStore.Core.Messages.CommonMessages.Notifications;
 using System.Threading.Tasks;
 
@@ -11,5 +12,7 @@ namespace NerdStore.Core.Comunication.Mediator
         Task<bool> EnviarComando<T>(T comando) where T : Command;
 
         Task PublicarNotificacao<T>(T notificacao) where T : DomainNotification;
+
+        Task PublicarDomainEvent<T>(T notificacao) where T : DomainEvent;
     }
 }
