@@ -1,8 +1,9 @@
-﻿using System;
+﻿using NerdStore.Core.DomainObjects;
+using System;
 
 namespace NerdStore.Vendas.Application.Queries.ViewModels
 {
-    public class PedidoViewModel
+    public class PedidoViewModel : Entity
     {
         public int Codigo { get; set; }
         public decimal ValorTotal { get; set; }

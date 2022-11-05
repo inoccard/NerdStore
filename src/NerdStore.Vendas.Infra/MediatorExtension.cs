@@ -1,4 +1,4 @@
-﻿using NerdStore.Core.Comunication.Mediator;
+﻿using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.DomainObjects;
 using System.Linq;
 using System.Threading.Tasks;

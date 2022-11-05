@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NerdStore.Core.Communication.Mediator;
-using NerdStore.Core.Comunication.Mediator;
+using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.Data;
 using NerdStore.Core.Messages;
 using NerdStore.Pagamentos.Business;

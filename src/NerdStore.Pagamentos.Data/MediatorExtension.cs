@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NerdStore.Core.DomainObjects;
 using NerdStore.Pagamentos.Data;
-using NerdStore.Core.Comunication.Mediator;
+using NerdStore.Core.Communication.Mediator;
 
 namespace NerdStore.Core.Communication.Mediator
 {

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using NerdStore.Core.Comunication.Mediator;
+using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.Messages.CommonMessages.IntegrationEvents;
 using System.Threading;
 using System.Threading.Tasks;

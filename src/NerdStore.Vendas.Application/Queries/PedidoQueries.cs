@@ -58,7 +58,14 @@ namespace NerdStore.Vendas.Application.Queries
             var pedidosView = new List<PedidoViewModel>();
 
             foreach (var pedido in pedidos)
-                pedidosView.Add(new PedidoViewModel { ValorTotal = pedido.ValorTotal, PedidoStatus = (int)pedido.PedidoStatus, Codigo = pedido.Codigo, DataCadastro = pedido.DataCadastro });
+                pedidosView.Add(new PedidoViewModel
+                {
+                    Id = pedido.Id,
+                    ValorTotal = pedido.ValorTotal,
+                    PedidoStatus = (int)pedido.PedidoStatus,
+                    Codigo = pedido.Codigo,
+                    DataCadastro = pedido.DataCadastro
+                });
 
             return pedidosView;
         }
